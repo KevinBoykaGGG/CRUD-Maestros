@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:mth="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Busqueda</title>
+</head>
+<body>
+	<h1 th:text="${titulo}"></h1>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>Edad</th>
+				<th>Salario</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="maestro: ${maestros}">
+				<td th:text="${maestro.id}">Numero</td>
+				<td th:text="${maestro.nombre}">Nombre</td>
+				<td th:text="${maestro.edad}">Edad</td>
+				<td th:text="${maestro.salario}">Salario</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+<br>
+<a href="/app/index"><input type="button" value="Menu Principal"></a>
+
+</body>
+</html>

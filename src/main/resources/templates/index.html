@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:mth="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Menu Principal</title>
+</head>
+<body>
+	<h1 th:text="${titulo}">Maestros</h1>
+	<a href="/app/agregar"><input type="button" value="Agregar"></a> 
+	<a href="/app/buscar"><input type="button" value="Buscar"></a><br><br>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>Edad</th>
+				<th>Salario</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="maestro: ${maestros}">
+				<td th:text="${maestro.id}">Numero</td>
+				<td th:text="${maestro.nombre}">Nombre</td>
+				<td th:text="${maestro.edad}">Edad</td>
+				<td th:text="${maestro.salario}">Salario</td>
+                <td><a th:href="@{/app/editar/} + ${maestro.id}" ><input type="button" value="Editar"></a></td>
+                <td><a th:href="@{/app/eliminar/} + ${maestro.id}" ><input type="button" value="Eliminar"></a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+
+
+</body>
+</html>

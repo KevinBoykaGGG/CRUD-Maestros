@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:mth="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Busqueda</title>
+</head>
+<body>
+	<h1 th:text="${titulo}"></h1>
+
+	<form th:action="@{/bd/buscarId}" th:object="${maestro}" method="post">
+		<div>
+			<div>
+				<label for="id">Ingresa ID de maestro </label><br>
+				<div>
+					<input type="number" name="id" th:field="*{id}">
+				</div>
+				<h1 th:text=${error}></h1>
+				<div th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></div>
+				<br> <input type="submit" value="Ver">
+			</div>
+		</div>
+	</form>
+	<br>
+	<a href="/app/index"><input type="button" value="Menu Principal"></a>
+</body>
+</html>
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:mth="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Busqueda</title>
+</head>
+<body>
+	<h1 th:text="${titulo}"></h1>
+
+	<form th:action="@{/bd/buscarSalario}" th:object="${maestro}" method="post">
+		<div>
+			<div>
+				<label for="salario1">Ingresa Salario Min </label><br>
+				<div>
+					<input type="text" name="salario1" id="salario1">
+				</div>
+				<label for="salario2">Ingresa Salario Max</label><br>
+				<div>
+					<input type="text" name="salario2" id="salario2">
+				</div>
+			</div>
+			
+			<div >
+			<br> <input type="submit" value="Ver"> </div>
+		</div>
+	</form>
+
+</body>
+</html>
+

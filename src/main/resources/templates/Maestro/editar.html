@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:mth="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Editar</title>
+</head>
+<body>
+	<h1 th:text="${titulo}"></h1>
+
+	<form th:action="@{/bd/actualizar}" th:object="${maestro}"
+		method="post">
+		<div>
+
+			<div>
+				<label for="id">ID</label><br>
+				<div >
+					<input type="number" name="id" th:field="*{id}" readonly="readonly">
+				</div>
+				<div th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></div>
+				<br>
+			</div>
+			<div>
+				<label for="nombre">Nombre</label><br>
+				<div>
+					<input type="text" name="nombre" th:field="*{nombre}">
+				</div>
+				<div th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+				<br>
+			</div>
+			<div>
+				<label for="edad">Edad</label><br>
+				<div>
+					<input type="number" name="edad" th:field="*{edad}">
+				</div>
+				<div th:if="${#fields.hasErrors('edad')}" th:errors="*{edad}"></div>
+				<br>
+			</div>
+			<div>
+				<label for="salario">Salario</label><br>
+				<div>
+					<input type="text" name="salario" th:field="*{salario}">
+				</div>
+				<div th:if="${#fields.hasErrors('salario')}" th:errors="*{salario}"></div>
+				<br>
+			</div>
+			<h3 th:text="${advertencia}"></h3>
+			<br> <input type="submit" value="Actualizar">
+
+		</div>
+	</form>
+	<br>
+	<a href="/app/index"><input type="button" value="Menu Principal"></a>
+</body>
+</html>
+

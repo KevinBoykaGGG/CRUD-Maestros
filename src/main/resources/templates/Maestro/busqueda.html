@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:mth="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Busqueda</title>
+</head>
+<body>
+	<h1 th:text="${titulo}"></h1>
+    
+    <ul>
+		<li><a th:href="@{/app/busquedaId}"> Buscar por ID</a>
+		<li><a th:href="@{/app/busquedaNom}"> Buscar por Nombre</a></li>
+		<li><a th:href="@{/app/busquedaSal}"> Busqueda por Salario</a></li>
+
+	</ul>
+	<br>
+         <a href="/app/index"><input type="button" value="Menu Principal"></a>
+</body>
+</html>
+
